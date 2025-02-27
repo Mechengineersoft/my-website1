@@ -25,7 +25,7 @@ function displayData(data) {
 
     if (data.length > 0) {
         const [blockNo, partNo, thickness, nos, colour1, colour2] = data[0];
-        colorDisplay.innerHTML = `Colours: ${colour1} and ${colour2}`;
+        colorDisplay.innerHTML = `Fac Colour: ${colour1} <br> Sub Colour: ${colour2}`;
         colorDisplay.style.color = colour1;
         colorDisplay.style.backgroundColor = colour2;
 
