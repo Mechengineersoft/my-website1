@@ -4,40 +4,75 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .container {
     max-width: 800px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     text-align: center;
+    font-size: 24px; /* Larger font size for mobile */
 }
+
 .search-container {
     display: flex;
+    flex-direction: column; /* Stack inputs vertically on mobile */
     gap: 10px;
     margin-bottom: 20px;
 }
+
 input, button {
-    padding: 10px;
+    padding: 12px; /* Larger padding for easier tapping */
     font-size: 16px;
+    width: 100%; /* Full width on mobile */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
 }
+
 th {
     background-color: #f8f8f8;
 }
+
 #colorDisplay {
     margin: 20px 0;
-    font-size: 24px;
+    font-size: 20px; /* Slightly smaller font size for mobile */
     font-weight: bold;
     text-align: center;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    #colorDisplay {
+        font-size: 18px;
+    }
 }
