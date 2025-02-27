@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Data</h1>
+        <div class="search-container">
+            <input type="text" id="blockNo" placeholder="Block No" required>
+            <input type="text" id="partNo" placeholder="Part No">
+            <input type="text" id="thickness" placeholder="Thickness">
+            <button onclick="searchData()">Search</button>
+            <button onclick="clearData()">Clear</button>
+        </div>
+        <div id="colorDisplay"></div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Block No</th>
+                    <th>Part No</th>
+                    <th>Thickness</th>
+                    <th>Nos</th>
+                    <th>Colour 1</th>
+                    <th>Colour 2</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
