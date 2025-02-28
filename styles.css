@@ -104,3 +104,42 @@ th {
         font-size: 16px;
     }
 }
+.signup-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signup-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.signup-container input {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.signup-container button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-container button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+}
