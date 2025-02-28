@@ -17,12 +17,15 @@ function generateOTP() {
 }
 
 // Send OTP via Email
-async function sendEmailOTP(email, otp) {
+aasync function sendEmailOTP(email, otp) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: EMAIL_USER,
             pass: EMAIL_PASS,
+        },
+        tls: {
+            rejectUnauthorized: false, // Ignore self-signed certificate errors
         },
     });
 
@@ -48,7 +51,10 @@ async function sendSMSOTP(mobile, otp) {
 
 // Netlify Function Handler
 exports.handler = async (event, context) => {
+    console.log('Received event:', event); // Log the incoming event
+
     const { action, email, mobile, otp } = JSON.parse(event.body);
+    console.log('Parsed data:', { action, email, mobile, otp }); // Log parsed data
 
     try {
         if (action === 'generate') {
@@ -85,9 +91,10 @@ exports.handler = async (event, context) => {
             };
         }
     } catch (error) {
+        console.error('Error:', error); // Log the error
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: 'Internal Server Error' }),
+            body: JSON.stringify({ error: 'Internal Server Error', details: error.message }),
         };
     }
 };
